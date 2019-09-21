@@ -26,18 +26,18 @@ class DetailsScreen extends React.Component {
 const RootStack = createStackNavigator(
   {
     Home: HomeScreen,
-    Details: DetailsScreen,
+    Details: DetailsScreen
   },
   {
-    initialRouteName: 'Home',
+    initialRouteName: 'Home'
   }
 );
 
-const AppContainer = createAppContainer(RootStack);
+const AppContainer = createAppContainer(RootStack)
 
 export default class App extends React.Component {
   render() {
-    return <AppContainer />;
+    return <AppContainer />
   }
 }
 
