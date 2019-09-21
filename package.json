@@ -29,7 +29,8 @@
     "metro-react-native-babel-preset": "0.54.1",
     "react-native-typescript-transformer": "^1.2.13",
     "react-test-renderer": "16.8.6",
-    "typescript": "^3.6.3"
+    "typescript": "^3.6.3",
+    "@babel/plugin-proposal-decorators": "^7.4.0"
   },
   "jest": {
     "preset": "react-native",
