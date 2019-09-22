@@ -10,7 +10,7 @@ export default class Login extends React.Component {
   render() {
     return (
       <View style = {styles.mainArea} >
-     
+        <View style={styles.loginArea}></View>
       </View>
     )
   }
@@ -18,9 +18,18 @@ export default class Login extends React.Component {
 
   const styles = StyleSheet.create({
     mainArea: {
-      width: "100%",
-      height:  "100%",
-      backgroundColor: "aliceblue"
+      width : "100%",
+      height : "100%",
+      flexDirection: 'column',
+      justifyContent: 'center',
+      backgroundColor: "aliceblue",
+     
+    },
+    loginArea: {
+      height:  150,
+      marginLeft: 16,
+      marginRight: 16,
+      backgroundColor: "white"
     }
   })
 
