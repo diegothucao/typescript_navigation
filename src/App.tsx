@@ -6,11 +6,11 @@ import Main from './ui/main/Main'
 
 const RootStack = createStackNavigator(
   {
-    Login: Login,
-    Main: Main
+    login: Login,
+    main: Main
   },
   {
-    initialRouteName: 'Login'
+    initialRouteName: 'login'
   }
 )
 
