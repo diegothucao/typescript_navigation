@@ -1,5 +1,5 @@
 import { create, ApisauceInstance } from 'apisauce'
-import { AsyncStorage } from 'react-native'
+import AsyncStorage from '@react-native-community/async-storage'
 import { LoginUserData, UUserData } from '../model/UserModel'
 
 class LoginService {
