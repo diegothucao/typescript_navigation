@@ -22,10 +22,10 @@ export interface Props {
   appStore: AppStore
 }
 
-@inject("appStore") @observer
-export default class App extends React.Component<Props> {
+class App extends React.Component<Props> {
   render() {
     return <AppContainer />
   }
 }
 
+export default inject("appStore")(observer(App))

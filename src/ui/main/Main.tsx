@@ -7,8 +7,7 @@ export interface Props {
   mainStore: MainStore
 }
 
-@inject("mainStore") @observer
-export default class Main extends React.Component {
+class Main extends React.Component<Props> {
   render() {
     return (
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
@@ -17,3 +16,5 @@ export default class Main extends React.Component {
     )
   }
 }
+
+export default inject("mainStore")(observer(Main))

@@ -8,8 +8,7 @@ export interface Props {
   loginStore: LoginStore
 }
 
-@inject("loginStore") @observer
-export default class Login extends React.Component<Props> {
+class Login extends React.Component<Props> {
   static navigationOptions = {
     header: null
   }
@@ -41,6 +40,8 @@ export default class Login extends React.Component<Props> {
   }
 }
 
+export default inject("loginStore")(observer(Login))
+
 const styles = StyleSheet.create({
   mainArea: {
     width: "100%",
@@ -62,6 +63,4 @@ const styles = StyleSheet.create({
     marginTop: 40,
     alignSelf: "center"
   }
-
 })
-
