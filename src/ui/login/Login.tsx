@@ -16,8 +16,16 @@ class Login extends React.Component<Props> {
   async componentDidMount() {
   }
 
-  LoginPress = () => {
+  loginPress = () => {
     this.props.loginStore.login()
+  }
+
+  handleChangeEmail = (email: string) => {
+    this.props.loginStore.setEmail(email)
+  }
+
+  handleChangePassword = (password: string) => {
+    this.props.loginStore.setPassword(password)
   }
 
   render() {
@@ -25,13 +33,19 @@ class Login extends React.Component<Props> {
       <View style={styles.mainArea} >
         <View style={styles.loginArea}>
           <Input
-            placeholder='Email' autoCompleteType="email" keyboardType="email-address" autoCapitalize="none"
+            placeholder='Email' autoCompleteType="email"
+            keyboardType="email-address" autoCapitalize="none"
+            defaultValue={this.props.loginStore.email.get()}
+            onChangeText={this.handleChangeEmail}
           />
           <Input
-            placeholder='Password' secureTextEntry={true} autoCompleteType="password" autoCapitalize="none"
+            placeholder='Password' secureTextEntry={true} autoCompleteType="password"
+            autoCapitalize="none"
+            defaultValue={this.props.loginStore.password.get()}
+            onChangeText={this.handleChangePassword}
           />
           <Button
-            title="Login" style={styles.loginButton} onPress={this.LoginPress}
+            title="Login" style={styles.loginButton} onPress={this.loginPress}
           />
         </View>
 

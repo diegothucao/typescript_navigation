@@ -1,17 +1,29 @@
 import { loginService } from '../services/LoginService'
 import { UUserData } from '../model/UserModel'
-import { observable } from 'mobx'
+import { observable, IObservableValue, action } from 'mobx'
 
 export default class LoginStore {
-    @observable user: UUserData
-    constructor() {
-    }
+  @observable email: IObservableValue<string> = observable.box("cao.trung.thu@gmail.com")
+  @observable password: IObservableValue<string> = observable.box("")
+  @observable user: UUserData
+  constructor() {
+  }
 
-    login = () => {
-        loginService.login("", "").then(
-          data => {
-            this.user = data
-          }
-        )
+  login = () => {
+    loginService.login(this.email.get(), this.password.get()).then(
+      data => {
+        console.log(data)
+        this.user = data
       }
+    )
+  }
+
+  @action setPassword(password: string) {
+    this.password.set(password)
+  }
+
+  @action setEmail(email: string) {
+    this.email.set(email)
+  }
+
 }
